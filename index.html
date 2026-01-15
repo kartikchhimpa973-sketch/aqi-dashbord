@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro AQI Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2><i class="fa-solid fa-wind"></i> Air Quality Tracker</h2>
+            
+            <div class="search-container">
+                <div class="input-group">
+                    <i class="fa-solid fa-location-dot input-icon"></i>
+                    <input type="text" id="cityInput" placeholder="Enter City name...">
+                </div>
+                <button id="searchBtn" title="Search City"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="locationBtn" title="Use Current Location" class="loc-btn"><i class="fa-solid fa-crosshairs"></i></button>
+            </div>
+
+            <div id="loader" class="loader" style="display:none;">
+                <i class="fa-solid fa-spinner fa-spin"></i> Fetching data...
+            </div>
+
+            <div id="result" class="result-area fade-in" style="display:none;">
+                <div class="location-header">
+                    <h3 id="cityName">---</h3>
+                    <span id="statusIcon" class="status-emoji"></span>
+                </div>
+                
+                <div class="aqi-box">
+                    <span class="aqi-label">AQI Index</span>
+                    <div id="aqiValue" class="aqi-number">0</div>
+                    <p id="aqiText" class="status-text">Status</p>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <i class="fa-solid fa-smog"></i>
+                        <span>PM2.5: <b id="pm25">--</b></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-cloud"></i>
+                        <span>NO2: <b id="no2">--</b></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="project1.js"></script>
+</body>
+</html>
